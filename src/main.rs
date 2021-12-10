@@ -1,5 +1,8 @@
 mod day_one;
+mod day_two;
+mod common;
 
 fn main() {
-    day_one::solve_part_two();
+    day_two::solve_task_one();
+    day_two::solve_task_two();
 }

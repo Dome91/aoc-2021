@@ -2,14 +2,10 @@ use std::error::Error;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader, Lines};
 
-fn read_file() -> Lines<BufReader<File>> {
-    let file = File::open("src/day_one/task.txt").unwrap();
-    let lines = io::BufReader::new(file).lines();
-    return lines;
-}
+use crate::common::read_file;
 
 pub fn solve_part_one() {
-    let lines = read_file();
+    let lines = read_file("src/day_one/task.txt");
     let mut last_value = i32::MAX;
     let mut result = 0;
     for line in lines {
@@ -44,7 +40,7 @@ impl SlidingWindow {
 }
 
 pub fn solve_part_two() {
-    let lines = read_file()
+    let lines = read_file("src/day_one/task.txt")
         .map(|line| line.unwrap().parse::<i32>())
         .map(|x| x.unwrap())
         .collect::<Vec<i32>>();
