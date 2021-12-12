@@ -1,11 +1,10 @@
+mod common;
 mod day_one;
 mod day_two;
 mod day_three;
-mod common;
 mod day_four;
+mod day_five;
 
 fn main() {
-
-    day_four::solve_task_one("src/day_four/task.txt", 5);
-
+    day_five::solve_task_two("src/day_five/task.txt");
 }

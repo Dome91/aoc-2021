@@ -21,3 +21,12 @@ pub fn separate_and_parse<ITEM>(string: String, separator: &str) -> Vec<ITEM> wh
         .map(|value| value.parse::<ITEM>().expect("Cannot parse value"))
         .collect::<Vec<ITEM>>();
 }
+
+pub fn separate(string: String, separator: &str) -> Vec<String> {
+    return string
+        .split(separator)
+        .into_iter()
+        .filter(|value| !value.is_empty())
+        .map(|value| value.trim().to_string())
+        .collect::<Vec<String>>();
+}
